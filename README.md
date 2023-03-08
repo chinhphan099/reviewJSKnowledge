@@ -70,3 +70,27 @@
 
   console.log(timSoChan)
   ```
+
+  - Bất đồng bộ
+  * Sử dụng promise
+  ```
+  const promiseFnc = (num) => new Promise((resolve, reject) => {
+    !(num % 2) ? resolve('Đây là số chẵn') : reject('Đây không phải là số chẵn')
+  })
+
+  const value = promiseFnc(10)
+                .then(() => {
+                  // mặc định trả về một promise
+                  return 100 // Đây là giá trị trả về cuối cùng của promise nếu resolve
+                })
+                // Có thể viết thêm nhiều .then() nữa, .then sau sử dụng giá trị trả về của .then trước
+                .catch((err) => {
+                  console.log(err)
+                  return -100 // Đây là giá trị trả về cuối cùng của promise nếu reject
+                })
+                .finally(() => console.log('Luôn luôn chạy vào finally!'))
+  value.then((val) => {
+    console.log(val) // val: là giá trị trả về từ promise sau mỗi 'then'
+  })
+  console.log(value)
+  ```
