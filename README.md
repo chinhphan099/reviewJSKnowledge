@@ -19,7 +19,9 @@
     }
     run() {
       handle(this.meow) // Có lỗi
-      // Cách 3: sử dụng bind
+      // Cách 3: sử dụng arrow function
+      // handle(() => this.meow())
+      // Cách 4: sử dụng bind
       // handle(this.meow.bind(this))
     }
   }
