@@ -119,3 +119,44 @@ const number = 123
 handleClick<string>(text)
 handleClick<number>(number)
 // handleClick<number>(text) // Lỗi, vì text và number không cùng kiểu
+
+
+// Class
+class Person2 {
+  public name: string
+  private age: number
+  readonly money: number
+
+  // constructor(public name: string, private age: number) { // có thể sử dụng cách này để giảm khai báo các dòng ở trên
+  constructor(name: string, age: number, money: number) {
+    this.name = name
+    this.age = age
+    this.money = money
+  }
+
+  printAge() {
+    console.log(this.age)
+    console.log(this.money)
+  }
+}
+const alex = new Person2('alex', 10, 2000)
+alex.name
+// alex.age // Lỗi vì age được khai báo private
+alex.printAge()
+console.log(alex.money)
+// alex.money = 100 // Lỗi
+
+// Cách viết ngắn gọn
+class Person3 {
+  constructor(public name: string, private age: number, readonly money: number) {/*Trong này rỗng*/}
+
+  printAge() {
+    // this.money = 2000 // Lỗi, chi
+    console.log(this.age)
+    console.log(this.money)
+  }
+}
+const ken = new Person3('Ken', 10, 3000)
+ken.name
+ken.money
+ken.printAge()
