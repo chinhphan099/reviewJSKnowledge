@@ -151,7 +151,7 @@ class Person3 {
   constructor(public name: string, private age: number, readonly money: number) {/*Trong này rỗng*/}
 
   printAge() {
-    // this.money = 2000 // Lỗi, chi
+    // this.money = 2000 // Lỗi, money sử dụng readonly, chỉ nhận giá trị lúc khởi tạo
     console.log(this.age)
     console.log(this.money)
   }
