@@ -92,5 +92,25 @@
   value.then((val) => {
     console.log(val) // val: là giá trị trả về từ promise sau mỗi 'then'
   })
-  console.log(value)
+  console.log(value) // value là một promise function
+  ```
+
+  * Sử dụng async, await. await nằm trong async, await sử dụng với một promise function
+  ```
+  const promiseFnc = (num) => new Promise((resolve, reject) => {
+    !(num % 2) ? resolve('Đây là số chẵn') : reject('Đây không phải là số chẵn')
+  })
+  const handle = async () => {
+    try {
+      const value = await promiseFnc(10)
+      console.log(value)
+    }
+    catch (error) {
+      console.log(error)
+    }
+    finally {
+      console.log('Finally')
+    }
+  }
+  handle()
   ```
