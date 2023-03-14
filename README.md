@@ -2,7 +2,7 @@
   - Toán Tử ??
     * Kiểm tra giá trị là undefine hoặc là null
   - ES6 Class
-  ```
+  ```js
   function handle(cb) {
     cb && cb()
   }
@@ -29,7 +29,7 @@
   alex.run()
   ```
   - Callback function
-  ```
+  ```js
   const nums = [1, 2, 3, 4, 5]
   const callback = (value, index) => {
     console.log(`STT ${index} la ${value}`)
@@ -39,7 +39,7 @@
   https://www.w3schools.com/jsref/jsref_foreach.asp
   ```
   - Currying là function return về function
-  ```
+  ```js
   function findNumber(num) {
     return function(fnc) {
       const result = []
@@ -73,7 +73,7 @@
 
   - Bất đồng bộ
   * Sử dụng promise
-  ```
+  ```js
   const promiseFnc = (num) => new Promise((resolve, reject) => {
     !(num % 2) ? resolve('Đây là số chẵn') : reject('Đây không phải là số chẵn')
   })
@@ -96,7 +96,7 @@
   ```
 
   * Sử dụng async, await. await nằm trong async, await sử dụng với một promise function
-  ```
+  ```js
   const promiseFnc = (num) => new Promise((resolve, reject) => {
     !(num % 2) ? resolve('Đây là số chẵn') : reject('Đây không phải là số chẵn')
   })
